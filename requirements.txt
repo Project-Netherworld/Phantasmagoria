@@ -1,0 +1,4 @@
+transformers==4.24.1
+discord
+requests
+base64
