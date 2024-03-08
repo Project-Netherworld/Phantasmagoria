@@ -1,4 +1,4 @@
-transformers==4.24.1
+transformers==4.24.0
 discord
 requests
 base64
