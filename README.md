@@ -31,7 +31,9 @@ The Front End is the primary attraction of this ecosystem, as it has the most fe
 2. **To run the program, you will need to pass the configuration file like such:**
 `python netherworld_main “your_config_file_here.json”`. Some installations of Python 3 utilize `python3` as a prefix to run Python commands instead, so if this is the case, run the command as such instead:
 `python3 netherworld_main “your_config_file_here.json”`
-3a. If you are utilizing the discord frontend, you'll be able to verify that the program works if your chatbot is online(marked off by a green dot near their profile picture), and on top of that, has access to slash commands as seen below:![Picture of the settings, including all the slash commands pulled up.](https://github.com/Project-Netherworld/.github/blob/main/images/image30.png?raw=true)
+3a. If you are utilizing the discord frontend, you'll be able to verify that the program works if your chatbot is online(marked off by a green dot near their profile picture), and on top of that, has access to slash commands as seen below:
+
+![Picture of the settings, including all the slash commands pulled up.](https://github.com/Project-Netherworld/.github/blob/main/images/image30.png?raw=true)
 
 If your bot is not online, it likely is a problem to deal with either the program or your bot’s `token` setting. If slash commands do not show up, there is an issue with your `main_guild_id` setting.
 
