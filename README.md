@@ -1,5 +1,7 @@
 # Phantasmagoria
-The front end for the Project Netherworld Ecosystem. For more information about the Project, see [this homepage](https://github.com/Project-Netherworld).
+The front end for the Project Netherworld Ecosystem. For more information about the project, see [this homepage](https://github.com/Project-Netherworld).
+If you are looking for more information regarding this project's backend, click [here](https://github.com/Project-Netherworld/Ayakashi). 
+Similarly, if you are looking for more information regarding this project's settings builder, click [here](https://github.com/Project-Netherworld/IdolaDeus).
 
 ## Features 
 - Efficient Communication via Serialization of Tensors and Chat History(using FastAPI and Uvicorn) to Interface with the [Ayakashi Back End](https://github.com/Project-Netherworld/Ayakashi).
