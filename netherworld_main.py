@@ -3,7 +3,7 @@ import sys
 import settings_handler
 import terminal_provider
 import discord_provider
-import logging
+import logging, threading
 def main():
     """
     The main driver of the front-end. Organizes Front End Providers alongside config settings.
@@ -25,7 +25,20 @@ def main():
                 logging.error("There was a problem logging into discord. Check your token config?")
                 logging.exception(discord_login_exception)
     elif len(sys.argv) > 2:
-        logging.error("Too many arguments passed via command line. Please only pass your json config file!")
+        logging.info("Launching with experimental multi config file support")
+        threads = []
+        for config in sys.argv[1:]:
+            settings_class = settings_handler.Settings_Handler(config)
+            if settings_class.settings['provider_settings']['provider_type'] == "terminal":
+                logging.error("Terminal provider does not support multiple config files")
+                return
+            elif settings_class.settings['provider_settings']['provider_type'] == "discord":
+                discord_frontend = discord_provider.Discord_Provider(settings_class)
+                threads.append(threading.Thread(target=discord_frontend.run, args=(discord_frontend.token,)))
+        for thread in threads:
+            thread.start()
+        for thread in threads:
+            thread.join()
     else:
         logging.error("Please pass your json config file! You need a config file to run this program")
 
